@@ -1,0 +1,239 @@
+h1 {
+    font-size: 22px;
+    margin: 10px 10px 10px 10px;
+}
+
+.header {
+    border-bottom: 8px solid #808080;
+}
+
+.tableHeader {
+    display: none;
+}
+
+.itemAttributes {
+    color: #ccc;
+}
+
+.itemImageWrapper {
+    width: 50%;
+    height: 190px;
+    float: left;
+}
+
+.itemImage {
+    width: 150px;
+    /* height: 200px; */
+}
+
+.quantity {
+    border: 1px solid #808080;
+    margin-left: 5px;
+    padding: 5px 13px 5px;
+}
+
+.itemVariation,
+.itemName {
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.item {
+    margin-top: 50px;
+    border-bottom: 1px solid #808080;
+    height: 240px;
+    display: none;
+}
+
+.itemDetails {
+    width: 50%;
+    float: right;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.style {
+    margin-top: 10px;
+}
+
+.colour,
+.size {
+    margin-top: 5px;
+}
+
+.qty {
+    margin-top: 30px;
+}
+
+.pricePara {
+    margin-top: 20px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.totalItems {
+    float: right;
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+.btnContainer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+}
+
+.btns {
+    background: transparent;
+    border: none;
+    color: #ccc;
+}
+
+.editBtn {
+    margin-left: 10%;
+}
+
+.saveBtn {
+    margin-right: 10%;
+}
+
+.promotionBtn {
+    background: transparent;
+    border: 2px solid #808080;
+    height: 36px;
+    width: 30%;
+}
+
+.promotionField {
+    height: 30px;
+    width: 60%;
+}
+
+.promotionalLabel {
+    font-size: 15px;
+    width: 50%;
+}
+
+.checkout {
+    width: 79%;
+    margin: 20px 10% 0;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 25px;
+}
+
+.shipping {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 20px;
+}
+
+.appliedCode {
+    border-bottom: 2px solid #808080;
+    display: flex;
+    margin: 30px 0 50px;
+    justify-content: space-between;
+}
+
+.estTotal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkoutBtn {
+    border: none;
+    background-color: #0073e6;
+    color: #fff;
+    height: 50px;
+    width: 80%;
+    margin: 40px 40px;
+}
+
+.footer {
+    margin: 10px 10% 0;
+}
+
+.lock {
+    margin: 10px 40% 10px;
+}
+
+a {
+    color: #808080;
+}
+/* modal */
+.modal{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    height: 300px;
+    display: none;
+    background-color: rgba(146, 133, 133, 0.8); 
+    z-index: 1;
+}
+.modalDetails{
+    width: 50%;
+    float: left;
+}
+.editModal,.addModal{
+    border: none;
+    height: 40px;
+    width: 60%;
+    background-color: #0073e6;
+    color: #fff;
+}
+.modalImgContainer{
+    width: 50%;
+    float: right;
+}
+.editModal{
+    margin: 20px 0 20px;
+}
+.sizedrp{
+    width: 40%;
+    height: 50px;
+}
+.qtyDrp{
+    width: 40%;
+    height: 50px;
+}
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 40px;
+        margin: 20px 0 50px 10px;
+    }
+    .header {
+        border-bottom: none;
+    }
+    .totalItems {
+        display: none;
+    }
+    .tableHeader {
+        border-top: 1px solid #808080;
+        border-bottom: 8px solid #808080;
+        padding: 10px 0 10px;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+    }
+    .itemImageWrapper {
+        width: 30%;
+    }
+    .itemDetails {
+        width: 40%;
+    }
+}

@@ -15,8 +15,6 @@
     <header class="header">
         <h1>YOUR SHOPPING BAG
             <p class="totalItems itemNo">
-                3
-                <span> Items</span>
             </p>
         </h1>
 
@@ -108,56 +106,62 @@
     </main>
     <!-- edit modal -->
     <div class="modal " id="editModal">
-            <div class="modalDetails">
-                <p>Paisley Jean</p>
-                <p>$<span>21</span></p>
-                <select name="size" class="sizedrp">
-                    <option>Size</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                </select>
-                <select name="Qty:1"class="qtyDrp">
-                    <option value="1">Qty:1</option>
-                    <option value="2">Qty:2</option>
-                    <option value="3">Qty:3</option>
-                    <option value="4">Qty:4</option>
-                </select>
-                <br>
-                <button class="editModal">Edit</button><br>
-                <a href="#">See product Details</a>
-            </div>
-            
-            <div class="modalImgContainer">
-                <img src="assets/T1.jpg" alt="item Image">
-            </div>
+        <div class="modalDetails">
+            <p>Paisley Jean</p>
+            <p>$
+                <span>21</span>
+            </p>
+            <select name="size" class="sizedrp">
+                <option>Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select name="Qty:1" class="qtyDrp">
+                <option value="1">Qty:1</option>
+                <option value="2">Qty:2</option>
+                <option value="3">Qty:3</option>
+                <option value="4">Qty:4</option>
+            </select>
+            <br>
+            <button class="editModal">Edit</button>
+            <br>
+            <a href="#">See product Details</a>
         </div>
-        <!-- add to bag modal -->
-        <div class="modal hide" id="addModal">
-                <div class="modalDetails">
-                    <p>Paisley Jean</p>
-                    <p>$<span>21</span></p>
-                    <select name="size" class="sizedrp">
-                        <option>Size</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                    </select>
-                    <select name="Qty:1"class="qtyDrp">
-                        <option value="1">Qty:1</option>
-                        <option value="2">Qty:2</option>
-                        <option value="3">Qty:3</option>
-                        <option value="4">Qty:4</option>
-                    </select>
-                    <br>
-                    <button class="addModal">Add to Bag</button><br>
-                    <a href="#">See product Details</a>
-                </div>
-                
-                <div class="modalImgContainer">
-                    <img src="assets/T1.jpg" alt="item Image">
-                </div>
-            </div>
+
+        <div class="modalImgContainer">
+            <img src="assets/T1.jpg" alt="item Image">
+        </div>
+    </div>
+    <!-- add to bag modal -->
+    <div class="modal hide" id="addModal">
+        <div class="modalDetails">
+            <p>Paisley Jean</p>
+            <p>$
+                <span>21</span>
+            </p>
+            <select name="size" class="sizedrp">
+                <option>Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select name="Qty:1" class="qtyDrp">
+                <option value="1">Qty:1</option>
+                <option value="2">Qty:2</option>
+                <option value="3">Qty:3</option>
+                <option value="4">Qty:4</option>
+            </select>
+            <br>
+            <button class="addModal">Add to Bag</button>
+            <br>
+            <a href="#">See product Details</a>
+        </div>
+
+        <div class="modalImgContainer">
+            <img src="assets/T1.jpg" alt="item Image">
+        </div>
+    </div>
     <footer class="footer">
         <button class="checkoutBtn" id="checkoutButton">Checkout</button>
         <br>
@@ -169,20 +173,20 @@
         <p>
             <a href="#">SIGN IN</a> to save your cart and have access to your items on mobile, tablet and desktop </p>
     </footer>
-    
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB9F_y2cz4k9wzE9tthqi--hsAeWpnMmAk",
-    authDomain: "shopping-cart-1f07c.firebaseapp.com",
-    databaseURL: "https://shopping-cart-1f07c.firebaseio.com",
-    projectId: "shopping-cart-1f07c",
-    storageBucket: "shopping-cart-1f07c.appspot.com",
-    messagingSenderId: "172686302727"
-  };
-  firebase.initializeApp(config);
-</script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB9F_y2cz4k9wzE9tthqi--hsAeWpnMmAk",
+            authDomain: "shopping-cart-1f07c.firebaseapp.com",
+            databaseURL: "https://shopping-cart-1f07c.firebaseio.com",
+            projectId: "shopping-cart-1f07c",
+            storageBucket: "shopping-cart-1f07c.appspot.com",
+            messagingSenderId: "172686302727"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="scripts/index.js"></script>
 </body>
 

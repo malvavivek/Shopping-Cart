@@ -4,13 +4,15 @@ var cart = {};
     cart.subtotal = 0;
     cart.estimatedtotal = 0;
     cart.totalQuantity = 0;
+    cart.template = $('#item');
+    $('#item').remove();
     cart.renderCart = function (snapshot) {
 
         cart.db.on('value', function (snapshot) {
             cart.snapshot = snapshot;
             cart.itemList = Object.keys(snapshot.val());
             cart.itemList.forEach((item) => {
-                cart.itemContainer = $('#item').clone();
+                cart.itemContainer = cart.template.clone();
                 cart.itemContainer.find('.itemVariation').html(snapshot.val()[item].p_variation);
                 cart.itemContainer.find('.itemName').html(snapshot.val()[item].p_name);
                 cart.itemContainer.find('.style').children().eq(0).html(snapshot.val()[item].p_style);
@@ -20,7 +22,6 @@ var cart = {};
                 cart.itemContainer.find('.quantity').html(snapshot.val()[item].p_quantity);
                 cart.itemContainer.find('.price').html(snapshot.val()[item].p_price * snapshot.val()[item].p_quantity);
                 cart.itemContainer.find('.itemImage').prop('src', (snapshot.val()[item].p_img));
-                cart.itemContainer.css('display', 'block');
                 cart.itemContainer.find('.editBtn').on('click', function () {
                     $('#editModal').css('display', 'block');
                     $('.variationModal').html(snapshot.val()[item].p_variation);
@@ -50,7 +51,7 @@ var cart = {};
                         $('#editModal').css('display', 'none');
                         $('#editModal').find('.modal-color-options').html('');
                     });
-                    window.onclick = function(event) {
+                    window.onclick = function (event) {
                         if (event.target == this.document.getElementById('editModal')) {
                             $('#editModal').css('display', 'none');
                             $('#editModal').find('.modal-color-options').html('');

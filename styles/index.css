@@ -9,6 +9,7 @@ h1 {
 
 .tableHeader {
     display: none;
+
 }
 
 .itemAttributes {
@@ -41,8 +42,11 @@ h1 {
 .item {
     margin-top: 50px;
     border-bottom: 1px solid #808080;
-    height: 250px;
+    height: 270px;
+    display: flex;
     display: none;
+    margin: 0 5% 0;
+    
 }
 
 .itemDetails {
@@ -258,8 +262,20 @@ a {
 input[type=radio]:checked {
     border: 2px solid black;
 }
-
-@media only screen and (min-width: 768px) {
+.size-desk-container,.qty-desk-container,.price-desk-container{
+    width: 10%;
+    float: right;
+    display: none;
+}
+.deskSize,.deskQty,.deskPrice{
+    display: flex;
+    float: right;
+    width: 10%;
+}
+@media only screen and (min-width: 1080px) {
+    .size-desk-container,.qty-desk-container,.price-desk-container{
+        display: block;
+    }
     h1 {
         font-size: 40px;
         margin: 20px 0 50px 10px;
@@ -267,13 +283,18 @@ input[type=radio]:checked {
     .header {
         border-bottom: none;
     }
+    .deskItemNo{
+        width: 70%;
+        margin-left: 2%;
+    }
     .tableHeader {
         border-top: 1px solid #808080;
         border-bottom: 8px solid #808080;
         padding: 10px 0 10px;
         display: block;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        /* justify-content: space-between; */
     }
     .itemImageWrapper {
         width: 30%;
@@ -281,4 +302,8 @@ input[type=radio]:checked {
     .itemDetails {
         width: 40%;
     }
+    .totalItems{
+        display: none;
+    }
+    
 }

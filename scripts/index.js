@@ -15,7 +15,8 @@ var cart = {};
                 cart.itemContainer.find('.itemName').html(snapshot.val()[item].p_name);
                 cart.itemContainer.find('.style').children().eq(0).html(snapshot.val()[item].p_style);
                 cart.itemContainer.find('.colour').children().eq(0).html(snapshot.val()[item].p_selected_color.name);
-                cart.itemContainer.find('.size').children().eq(0).html(snapshot.val()[item].p_selected_size.code);
+                cart.itemContainer.find('.size').eq(0).children().eq(0).html(snapshot.val()[item].p_selected_size.code);
+                cart.itemContainer.find('.size').eq(1).children().eq(0).html(snapshot.val()[item].p_selected_size.code);
                 cart.itemContainer.find('.quantity').html(snapshot.val()[item].p_quantity);
                 cart.itemContainer.find('.price').html(snapshot.val()[item].p_price * snapshot.val()[item].p_quantity);
                 cart.itemContainer.find('.itemImage').prop('src', (snapshot.val()[item].p_img));
@@ -92,10 +93,10 @@ var cart = {};
             discount = cart.subtotal * 0.25;
             $('.JF-applied').html('JF25 ');
         } else if (cart.totalQuantity > 3 && cart.totalQuantity <= 6) {
-            discount = cart.subtotal * 0.25;
+            discount = cart.subtotal * 0.10;
             $('.JF-applied').html('JF10 ');
         } else if (cart.totalQuantity === 3) {
-            discount = cart.subtotal * 0.25;
+            discount = cart.subtotal * 0.05;
             $('.JF-applied').html('JF05 ');
         }
         $('.discount-amt').html('-$' + (discount));

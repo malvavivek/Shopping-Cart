@@ -36,22 +36,25 @@ var cart = {};
                         $label.appendTo($('#editModal').find('.modal-color-options'));
                         $input.appendTo($('#editModal').find('.modal-color-options'));
                     });
-                    snapshot.val()[item].p_available_options.sizes.forEach(function(size){
-                        // let $option = $('<option>');
-                        // $option.attr('value',size.code);
-                        // $option.html(size.name);
-                        if(size.code == snapshot.val()[item].p_selected_size.code)
-                            $('.sizedrp').prop('selected',true);
-                        // $option.appendTo($('.modal-container').find('#modal-size'));
+                    $('.sizedrp option').each(function () {
+                        if ($(this).val() == snapshot.val()[item].p_selected_size.code)
+                            $(this).attr('selected', true);
                     });
-                    //   if(  $('.sizedrp option:selected').val()=== snapshot.val()[item].p_selected_size.code){
-                    //         $('.sizedrp option:selected').prop('checked',true)
-                    //     };
+                    $('.qtyDrp option').each(function () {
+                        if ($(this).val() == snapshot.val()[item].p_quantity)
+                            $(this).attr('selected', true);
+                    });
+
                     $('.cross-icon').on('click', function () {
                         $('#editModal').css('display', 'none');
                         $('#editModal').find('.modal-color-options').html('');
                     });
-                    // $('select>option:eq(3)').prop('selected', true);
+                    window.onclick = function(event) {
+                        if (event.target == this.document.getElementById('editModal')) {
+                            $('#editModal').css('display', 'none');
+                            $('#editModal').find('.modal-color-options').html('');
+                        }
+                    }
                     $('.edit-modal-btn').on('click', function (e) {
                         firebase.database().ref('productsInCart/' + item).update({
                             p_quantity: $('.qtyDrp option:selected').val(),

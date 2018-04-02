@@ -4,8 +4,8 @@ var cart = {};
     cart.subtotal = 0;
     cart.estimatedtotal = 0;
     cart.totalQuantity = 0;
-    cart.template = $('#item');
-    $('#item').remove();
+    cart.template = $('.item');
+    $('.item').remove();
     cart.renderCart = function (snapshot) {
 
         cart.db.on('value', function (snapshot) {
@@ -29,32 +29,31 @@ var cart = {};
                     $('.modal-price').children().eq(0).html(snapshot.val()[item].p_originalprice);
                     $('.modalImgContainer').children().eq(0).prop('src', (snapshot.val()[item].p_img));
                     snapshot.val()[item].p_available_options.colors.forEach(function (color) {
-                        var $label = $('<label>').prop('for', color.name);
-                        var $input = $('<input type = "radio">').prop('id', color.name).prop('name', 'colors').prop('value', color.name).addClass('radio-buttons');
-                        $input.css('background-color', color.hexcode);
+                        var labelBtn = $('<label>').prop('for', color.name);
+                        var inputBtn = $('<input type = "radio">').prop('id', color.name).prop('name', 'colors').prop('value', color.name).addClass('color-choices').css('background-color', color.hexcode);
                         if (color.name == snapshot.val()[item].p_selected_color.name) {
-                            $input.prop('checked', true);
+                            inputBtn.prop('checked', true);
                         }
-                        $label.appendTo($('#editModal').find('.modal-color-options'));
-                        $input.appendTo($('#editModal').find('.modal-color-options'));
+                        labelBtn.appendTo($('.color-choices-container'));
+                        inputBtn.appendTo($('.color-choices-container'));
                     });
                     $('.sizedrp option').each(function () {
                         if ($(this).val() == snapshot.val()[item].p_selected_size.code)
-                            $(this).attr('selected', true);
+                            $(this).prop('selected', true);
                     });
                     $('.qtyDrp option').each(function () {
                         if ($(this).val() == snapshot.val()[item].p_quantity)
-                            $(this).attr('selected', true);
+                            $(this).prop('selected', true);
                     });
 
                     $('.cross-icon').on('click', function () {
                         $('#editModal').css('display', 'none');
-                        $('#editModal').find('.modal-color-options').html('');
+                        $('#editModal').find('.color-choices-container').html('');
                     });
                     window.onclick = function (event) {
                         if (event.target == this.document.getElementById('editModal')) {
                             $('#editModal').css('display', 'none');
-                            $('#editModal').find('.modal-color-options').html('');
+                            $('#editModal').find('.color-choices-container').html('');
                         }
                     }
                     $('.edit-modal-btn').on('click', function (e) {
@@ -68,16 +67,16 @@ var cart = {};
                             name: $('input[type=radio]:checked').val(),
                         });
                         $('#editModal').css('display', 'none');
+                        $('#editModal').find('.color-choices-container').html('');
                         window.location.reload();
-                        $('editModal').find('.modal-color-options').html('');
+
                     });
                 });
 
                 cart.subtotal = cart.subtotal + snapshot.val()[item].p_price * snapshot.val()[item].p_quantity;
                 cart.totalQuantity = cart.totalQuantity + parseInt(snapshot.val()[item].p_quantity);
                 $('.checkout').before(cart.itemContainer);
-                totalItems = parseInt(item) + 1;
-                $('.itemNo').html(totalItems + ' Items');
+                $('.itemNo').html(cart.totalQuantity + ' ITEMS');
             });
             $('.sub-amount').html(cart.subtotal);
             $('est-amount').html(cart.estimatedtotal);
@@ -87,18 +86,18 @@ var cart = {};
     }
     cart.discount = function () {
         var discount;
-        if (cart.subtotal < 50) {
-            $('.free-shipping').html("if you spend more than $50,you'll get free delivery");
-        }
-        if (cart.totalQuantity > 6) {
-            discount = cart.subtotal * 0.25;
-            $('.JF-applied').html('JF25 ');
+        if (cart.totalQuantity === 3) {
+            discount = cart.subtotal * 0.05;
+            $('.JF-applied').html('JF05 ');
         } else if (cart.totalQuantity > 3 && cart.totalQuantity <= 6) {
             discount = cart.subtotal * 0.10;
             $('.JF-applied').html('JF10 ');
-        } else if (cart.totalQuantity === 3) {
-            discount = cart.subtotal * 0.05;
-            $('.JF-applied').html('JF05 ');
+        } else if (cart.totalQuantity > 10) {
+            discount = cart.subtotal * 0.25;
+            $('.JF-applied').html('JF25 ');
+        } else {
+            discount = 0;
+            $('.JF-applied').html('NOT ');
         }
         $('.discount-amt').html('-$' + (discount));
         $('.est-amount').html(cart.subtotal - discount);

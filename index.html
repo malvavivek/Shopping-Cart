@@ -23,29 +23,29 @@
         <div class="tableHeader">
             <div class="deskItemNo">
                 <p class=" itemNo" id="totalItemNo">
-                    3
-                    <span> Items</span>
+
+                    <span> ITEMS</span>
                 </p>
             </div>
             <div class="deskSize">
-                <p>Size</p>
+                <p>SIZE</p>
             </div>
             <div class="deskQty">
                 <p>QTY</p>
             </div>
             <div class="deskPrice">
-                <p>Price</p>
+                <p>PRICE</p>
             </div>
 
         </div>
-        <div class="item" id="item">
+        <div class="item">
             <div class="itemImageWrapper">
                 <img src="assets/T1.jpg" alt="Item Image" class="itemImage">
             </div>
             <div class="itemDetails">
                 <div class="colourVariation">
-                    <h2 class="itemVariation">SOLID GREEN</h2>
-                    <h2 class="itemName">COTTON TSHIRT</h2>
+                    <p class="itemVariation">SOLID GREEN</p>
+                    <p class="itemName">COTTON TSHIRT</p>
                 </div>
                 <div class="itemAttributes">
                     <p class="style">Style #:
@@ -88,53 +88,56 @@
                 <button class="saveBtn btns">SAVE FOR LATER</button>
             </div>
         </div>
-        
+
         <div class="checkout">
-                <div class="help">
-                        <p>Need help</p>
-                        <p>or have questions?</p>
-                        <p>Call Customer service at</p>
-                        <p>1-800-555-5555</p>
-                        <a href="#">Chat With one of our Stylists</a><br>
-                        <a href="#">See return & exchange policy</a>
-                    </div>
+            <div class="help">
+                <p>Need help</p>
+                <p>or have questions?</p>
+                <p>Call Customer service at</p>
+                <p>1-800-555-5555</p>
+                <a href="#">Chat With one of our Stylists</a>
+                <br>
+                <a href="#">See return & exchange policy</a>
+            </div>
             <div class="checkout-container">
-            <div class="promotion">
-                <div>
-                    <label for="promotionCode" class="promotionalLabel">ENTER PROMOTION CODE OR GIFT CARD</label>
+                <div class="promotion">
+                    <div>
+                        <label for="promotionCode" class="promotionalLabel">ENTER PROMOTION CODE OR GIFT CARD</label>
+                    </div>
+                    <input type="text" id="promotionCode" class="promotionField">
+                    <button class="promotionBtn">Apply</button>
                 </div>
-                <input type="text" id="promotionCode" class="promotionField">
-                <button class="promotionBtn">Apply</button>
-            </div>
 
-            <div class="subtotal">
-                <p>SUBTOTAL</p>
-                <p>$
-                    <span class="sub-amount"></span>
-                </p>
-            </div>
-            <div class="shipping">
-                <p>ESTIMATED SHIPPING*
-                    <br>
-                    <span class="free-shipping">You spend $
-                        <span class="sub-amount"></span>,so you qualify for free shipping*</span>
-                </p>
-                <p>FREE</p>
-            </div>
-            <div class="appliedCode">
-                <p>PROMOTION CODE
-                    <span class="JF-applied"></span>APPLIED</p>
+                <div class="subtotal">
+                    <p>SUBTOTAL</p>
+                    <p>$
+                        <span class="sub-amount"></span>
+                    </p>
+                </div>
+                <div class="shipping">
+                    <p>ESTIMATED SHIPPING*
+                        <br>
+                        <span class="free-shipping">You spend $
+                            <span class="sub-amount amount-ship"></span>,so you qualify for free shipping*</span>
+                    </p>
+                    <p>FREE</p>
+                </div>
+                <div class="appliedCode">
+                    <p>PROMOTION CODE
+                        <span class="JF-applied"></span>APPLIED</p>
 
-                <span class="discount-amt">$0</span>
+                    <span class="discount-amt">$0</span>
 
-            </div>
+                </div>
 
-            <div class="estTotal">
-                <p>Estimated Total</p>
-                <p>$
-                    <span class="est-amount"></span>
-                </p>
-            </div>
+                <div class="estTotal">
+                    <p>ESTIMATED TOTAL
+                        <br>Tax will be applied
+                        <br>during Checkout</p>
+                    <p>$
+                        <span class="est-amount"></span>
+                    </p>
+                </div>
             </div>
 
         </div>
@@ -146,8 +149,10 @@
                 <p class="variationModal">Paisley</p>
                 <p class="nameModal">Jean</p>
                 <p class="modal-price">$
-                    <span>21</span>
+                    <span class="modal-price-row">21</span>
                 </p>
+                <div class="color-choices-container">
+                </div>
                 <select name="size" class="sizedrp">
 
                     <option value="s">s</option>
@@ -162,33 +167,31 @@
                     <option value="4">4</option>
                 </select>
                 <br>
-                <div class="modal-color-options">
-                </div>
+
 
                 <button class="edit-modal-btn">Edit</button>
                 <br>
-                <!-- <a href="#">See product Details</a> -->
             </div>
 
 
             <div class="cross-icon-container">
-                <img src="http://simpleicon.com/wp-content/uploads/cross.png" alt="" class="cross-icon">
+                <img src="http://simpleicon.com/wp-content/uploads/cross.png" alt="modal-close-icon" class="cross-icon">
             </div>
             <div class="modalImgContainer">
-                <img src="assets/T1.jpg" alt="item Image">
+                <img src="assets/T1.jpg" alt="item Image" class="modal-image">
 
             </div>
         </div>
     </div>
     <footer class="footer">
-        <button class="checkoutBtn" id="checkoutButton">Checkout</button>
+        <button class="checkoutBtn" id="checkoutButton">CHECKOUT</button>
         <br>
         <a href="#">CONTINUE SHOPPING</a>
         <br>
         <p>Secure checkout, shopping is always safe & secure</p>
         <br>
         <img src="assets/lock.jpg" alt="lock icon" class="lock">
-        <p>
+        <p class="toggle">
             <a href="#">SIGN IN</a> to save your cart and have access to your items on mobile, tablet and desktop </p>
     </footer>
 

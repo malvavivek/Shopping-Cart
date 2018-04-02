@@ -4,12 +4,13 @@ var cart = {};
     cart.subtotal = 0;
     cart.estimatedtotal = 0;
     cart.totalQuantity = 0;
+    //cloning the template
     cart.template = $('.item');
     $('.item').remove();
+    //function to render all cart items
     cart.renderCart = function (snapshot) {
 
         cart.db.on('value', function (snapshot) {
-            cart.snapshot = snapshot;
             cart.itemList = Object.keys(snapshot.val());
             cart.itemList.forEach((item) => {
                 cart.itemContainer = cart.template.clone();
@@ -22,6 +23,7 @@ var cart = {};
                 cart.itemContainer.find('.quantity').html(snapshot.val()[item].p_quantity);
                 cart.itemContainer.find('.price').html(snapshot.val()[item].p_price * snapshot.val()[item].p_quantity);
                 cart.itemContainer.find('.itemImage').prop('src', (snapshot.val()[item].p_img));
+                //on clicking the edit button in an item container 
                 cart.itemContainer.find('.editBtn').on('click', function () {
                     $('#editModal').css('display', 'block');
                     $('.variationModal').html(snapshot.val()[item].p_variation);
@@ -102,9 +104,6 @@ var cart = {};
         $('.discount-amt').html('-$' + (discount));
         $('.est-amount').html(cart.subtotal - discount);
     }
-    $('.promotionBtn').on('click', function () {
-        $('.JF-applied').html(' ' + $('.promotionField').val() + ' ');
-    });
     $('#total-cost-price').html(cart.estimatedtotal);
     cart.renderCart();
 })(cart);

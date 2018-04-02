@@ -7,6 +7,7 @@ h1 {
     border-bottom: 8px solid #808080;
 }
 
+/* this wrapper is only for desktop view  */
 .tableHeader {
     display: none;
 }
@@ -43,7 +44,7 @@ h1 {
 }
 
 .item {
-    border-bottom: 1px solid #808080;
+    border-bottom: 1px solid #ccc;
     height: 270px;
     display: flex;
     margin: 0 5% 0;
@@ -216,7 +217,7 @@ a {
     display: none;
 }
 
-/* modal */
+/* edit modal */
 
 .modal {
     position: absolute;
@@ -338,8 +339,8 @@ input[type=radio]:checked {
 .checkout-container {
     width: 100%;
 }
-
-@media only screen and (min-width: 1080px) {
+/* media breakpoint for desktop */
+@media only screen and (min-width: 1024px) {
     .size-desk-container,
     .qty-desk-container,
     .price-desk-container {
@@ -415,7 +416,7 @@ input[type=radio]:checked {
         font-size: 21px;
     }
     .qty {
-        margin-top: 15px;
+        margin-top: 10px;
     }
     .pricePara {
         margin-top: 5px;

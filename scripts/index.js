@@ -56,7 +56,7 @@ var cart = {};
                             $('#editModal').find('.color-choices-container').html('');
                         }
                     }
-                    $('.edit-modal-btn').on('click', function (e) {
+                    $('.edit-modal-btn').off('click').on('click', function (e) {
                         firebase.database().ref('productsInCart/' + item).update({
                             p_quantity: $('.qtyDrp option:selected').val(),
                         });
